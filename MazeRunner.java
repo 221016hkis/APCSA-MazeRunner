@@ -2,22 +2,28 @@ import java.util.*;
 
 public class MazeRunner {
     static Maze myMap = new Maze(); 
+    static Scanner input = new Scanner(System.in);
+
 
     public static void main(String[] args) {
         intro(); 
     }
 
     public static void intro() {
-        System.out.println("\nWelcome to the Maze Runner game! Here is what your maze currently looks like: "); 
+        System.out.println("\nWelcome to the Maze Runner game! Here is what your maze currently looks like.  "); 
+        System.out.println("The 'x' represents your current position and the '.' will turn into either walls ('-') or free space ('*')");
         myMap.printMap(); 
         dashedLines(); 
     }
     // welcome the user into the program and print the new map 
 
-/*
 
+ 
     public static String userMover() {
         //take in desired direction of move, and check if that direciton is valid and possilbe
+
+        System.out.println("Where would you like to move? (R, L, U, D)"); 
+        String direction = input.nextLine(); 
 
         if myMap.canIMoveRight("R"); = true{
             myMap.MoveRight(); 
@@ -49,7 +55,7 @@ public class MazeRunner {
 
     }
 
-    */ 
+    
 
 //This method is used to make it easier for the user to read what is in the console 
     public static void dashedLines() {
