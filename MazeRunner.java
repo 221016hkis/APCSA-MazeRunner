@@ -23,9 +23,9 @@ public class MazeRunner {
         //take in desired direction of move, and check if that direciton is valid and possilbe
 
         System.out.println("Where would you like to move? (R, L, U, D)"); 
-        String direction = input.nextLine(); 
-
-        if myMap.canIMoveRight("R"); = true{
+        String userChoice = input.nextLine(); 
+/*
+        if myMap.canIMoveRight("R");= true{
             myMap.MoveRight(); 
         }
 
@@ -33,7 +33,7 @@ public class MazeRunner {
             myMap.MoveLeft(); 
         }
 
-        if myMap.canIMoveUp("U"); = true{
+        if myMap.canIMoveUp("U"); = true {
             myMap.MoveUp(); 
         }
 
@@ -41,6 +41,9 @@ public class MazeRunner {
             myMap.MoveDown(); 
         }
 
+        */
+
+        String direction = ""; //use this for now
         return direction; 
     
     }
