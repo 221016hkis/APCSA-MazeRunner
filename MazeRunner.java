@@ -4,10 +4,11 @@ public class MazeRunner {
     static Maze myMap = new Maze(); 
     static Scanner input = new Scanner(System.in);
 
+
     public static void main(String[] args) {
         intro(); 
-        userMover(); 
-        myMap.printMap(); 
+        userMover();
+        myMap.printMap();
     }
 
     public static void intro() {
@@ -26,36 +27,31 @@ public class MazeRunner {
         System.out.println("Where would you like to move? (R, L, U, D)"); 
         String userChoice = input.nextLine(); 
 
-        if (userChoice.equals("R") || userChoice.equals("L") || userChoice.equals("U") || userChoice.equals("D")) {
-            if (myMap.canIMoveRight() == true){
-                myMap.moveRight(); 
 
-                
-            }
-    
-            if (myMap.canIMoveLeft() == true){
-                myMap.moveLeft(); 
-            }
-    
-            if (myMap.canIMoveUp() == true) {
-                myMap.moveUp(); 
-            }
-    
-            if (myMap.canIMoveDown() == true){
-                myMap.moveDown(); 
-            }
+
+        if (myMap.canIMoveRight() == true){
+            myMap.moveRight(); 
         }
 
-        else {
-            System.out.println("Your input isn't valid. "); 
+        if (myMap.canIMoveLeft() == true){
+            myMap.moveLeft(); 
         }
 
-    
+        if (myMap.canIMoveUp() == true) {
+            myMap.moveUp(); 
+        }
+
+        if (myMap.canIMoveDown() == true) {
+            myMap.moveDown(); 
+        }
+
+        
+
         String direction = ""; //use this for now
         return direction; 
     
     }
-
+/*
 
     public static void movesMessage(moves) {
         //print message after certain number of moves
@@ -66,7 +62,7 @@ public class MazeRunner {
 
     }
 
-    
+    */
 
 //This method is used to make it easier for the user to read what is in the console 
     public static void dashedLines() {
