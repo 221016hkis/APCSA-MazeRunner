@@ -4,10 +4,15 @@ public class MazeRunner {
     static Maze myMap = new Maze(); 
     static Scanner input = new Scanner(System.in);
 
+
     public static void main(String[] args) {
         intro(); 
+        while(myMap.didIWin() == false){
         userMover(); 
-        myMap.printMap(); 
+        myMap.printMap();  
+        }if (myMap.didIWin() == true){
+            System.out.println("Congrats you've made it");
+    }
     }
 
     public static void intro() {
@@ -26,36 +31,38 @@ public class MazeRunner {
         System.out.println("Where would you like to move? (R, L, U, D)"); 
         String userChoice = input.nextLine(); 
 
-        if (userChoice.equals("R") || userChoice.equals("L") || userChoice.equals("U") || userChoice.equals("D")) {
-            if (myMap.canIMoveRight() == true){
-                myMap.moveRight(); 
 
-                
-            }
+        
+        if (myMap.canIMoveRight() == true && userChoice.equals("R")){
+            myMap.moveRight(); 
+        }
     
-            if (myMap.canIMoveLeft() == true){
-                myMap.moveLeft(); 
-            }
-    
-            if (myMap.canIMoveUp() == true) {
-                myMap.moveUp(); 
-            }
-    
-            if (myMap.canIMoveDown() == true){
-                myMap.moveDown(); 
-            }
+
+        else if (myMap.canIMoveLeft() == true && userChoice.equals("L")){
+            myMap.moveLeft(); 
+        }
+
+        else if (myMap.canIMoveUp() == true && userChoice.equals("U")) {
+            myMap.moveUp(); 
+        }
+
+        else if (myMap.canIMoveDown() == true && userChoice.equals("D")) {
+            myMap.moveDown(); 
         }
 
         else {
-            System.out.println("Your input isn't valid. "); 
+            System.out.println("Error");
         }
 
-    
+        
+
         String direction = ""; //use this for now
         return direction; 
     
     }
 
+
+/*
 
     public static void movesMessage(moves) {
         //print message after certain number of moves
@@ -66,7 +73,7 @@ public class MazeRunner {
 
     }
 
-    
+    */
 
 //This method is used to make it easier for the user to read what is in the console 
     public static void dashedLines() {
